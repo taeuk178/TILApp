@@ -17,6 +17,7 @@ struct CreateAcronym: Migration {
         // 5
             .field("short", .string, .required)
             .field("long", .string, .required)
+            .field("userID", .uuid, .required, .references("users", "id"))
         // 6
             .create()
     }
